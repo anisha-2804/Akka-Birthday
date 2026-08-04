@@ -1,0 +1,363 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#090909,#1d1037,#090909);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   LOADER
+=========================== */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#loader h1{
+    font-size:45px;
+    animation:pulse 1.2s infinite;
+    color:#ff69b4;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.15);}
+    100%{transform:scale(1);}
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:30px;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("images/bg.jpg") center/cover no-repeat;
+}
+
+/* 🔥 Hero Background
+   images/bg.jpg
+   <-- உன் favorite photo வைங்க
+*/
+
+.hero h3{
+    font-size:30px;
+    color:#ffd700;
+}
+
+.hero h1{
+    font-size:75px;
+    margin-top:15px;
+    color:#ff69b4;
+    text-shadow:0 0 25px hotpink;
+}
+
+#typing{
+    margin-top:25px;
+    font-size:24px;
+    max-width:800px;
+    line-height:40px;
+}
+
+#playMusic{
+    margin-top:40px;
+    padding:15px 45px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    background:#ff4f81;
+    color:white;
+    font-size:20px;
+    transition:.4s;
+}
+
+#playMusic:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px hotpink;
+}
+
+/* ===========================
+   GALLERY
+=========================== */
+
+.gallery{
+    padding:100px 30px;
+}
+
+.gallery h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:45px;
+}
+
+.slider{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.slider img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.4s;
+    border:4px solid rgba(255,255,255,.15);
+}
+
+.slider img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 35px hotpink;
+}
+
+/* ===========================
+   VIDEOS
+=========================== */
+
+.videos{
+    padding:80px 30px;
+}
+
+.videos h2{
+    text-align:center;
+    margin-bottom:45px;
+    font-size:42px;
+}
+
+.videoBox{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.videoBox video{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(255,105,180,.35);
+}
+
+/* ===========================
+   LETTER
+=========================== */
+
+.letter{
+    padding:100px 20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.letter h2{
+    font-size:45px;
+    margin-bottom:30px;
+}
+
+.letter p{
+    max-width:850px;
+    text-align:center;
+    font-size:22px;
+    line-height:42px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.2);
+}
+
+/* ===========================
+   CAKE
+=========================== */
+
+.cakeSection{
+    padding:120px 20px;
+    text-align:center;
+}
+
+.cake{
+    font-size:140px;
+    margin:40px 0;
+    transition:.5s;
+}
+
+#cakeBtn{
+    padding:18px 50px;
+    border:none;
+    border-radius:50px;
+    background:#ff4f81;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+#cakeBtn:hover{
+    transform:scale(1.1);
+}
+
+/* ===========================
+   HEARTS
+=========================== */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:#ff5fa2;
+
+    animation:floatUp linear forwards;
+
+    opacity:.8;
+
+    pointer-events:none;
+
+}
+
+@keyframes floatUp{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   GLASS EFFECT
+=========================== */
+
+.gallery,
+.videos,
+.letter,
+.cakeSection{
+
+    backdrop-filter:blur(12px);
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff69b4;
+
+    border-radius:20px;
+
+}
+
+/* ===========================
+   FIREWORK CANVAS
+=========================== */
+
+#fireworks{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:46px;
+
+}
+
+.hero h3{
+
+font-size:24px;
+
+}
+
+#typing{
+
+font-size:18px;
+
+line-height:34px;
+
+}
+
+.gallery h2,
+.videos h2,
+.letter h2{
+
+font-size:34px;
+
+}
+
+.letter p{
+
+font-size:18px;
+
+line-height:34px;
+
+padding:25px;
+
+}
+
+.cake{
+
+font-size:100px;
+
+}
+
+}

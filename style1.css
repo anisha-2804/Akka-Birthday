@@ -1,0 +1,659 @@
+/* =================================
+   BASIC SETTINGS
+================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+    background:#050505;
+
+    color:white;
+
+    overflow:hidden;
+
+}
+
+
+/* =================================
+   SCREEN SYSTEM
+================================= */
+
+
+.screen{
+
+    width:100%;
+
+    height:100vh;
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:scale(1.1);
+
+    transition:1s ease;
+
+}
+
+
+.screen.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:scale(1);
+
+}
+
+
+
+/* =================================
+   BACKGROUND COLORS
+================================= */
+
+
+#intro{
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.5),
+rgba(0,0,0,.8)
+),
+
+url("images/bg.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+
+#welcome{
+
+background:
+
+radial-gradient(circle,#46124f,#050505);
+
+}
+
+
+
+#memories{
+
+background:
+
+linear-gradient(135deg,#15001f,#050505);
+
+}
+
+
+
+#videos{
+
+background:
+
+linear-gradient(135deg,#001b2e,#050505);
+
+}
+
+
+
+#letter{
+
+background:
+
+linear-gradient(135deg,#31002d,#050505);
+
+}
+
+
+
+#gift{
+
+background:
+
+linear-gradient(135deg,#3b2100,#050505);
+
+}
+
+
+
+#cake{
+
+background:
+
+linear-gradient(135deg,#320016,#050505);
+
+}
+
+
+
+#final{
+
+background:
+
+radial-gradient(circle,#ff1493,#050505);
+
+}
+
+
+
+
+
+/* =================================
+   CONTENT CARD
+================================= */
+
+
+.content{
+
+width:90%;
+
+max-width:1000px;
+
+padding:40px;
+
+background:
+
+rgba(255,255,255,.08);
+
+border-radius:30px;
+
+backdrop-filter:blur(15px);
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+box-shadow:
+
+0 0 40px rgba(255,105,180,.25);
+
+animation:float 4s infinite;
+
+}
+
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+
+/* =================================
+   TEXT
+================================= */
+
+
+h1{
+
+font-size:55px;
+
+color:#ffb6e6;
+
+text-shadow:
+
+0 0 20px hotpink;
+
+margin-bottom:25px;
+
+}
+
+
+h3{
+
+font-size:30px;
+
+color:#ffd700;
+
+margin-bottom:20px;
+
+}
+
+
+p{
+
+font-size:22px;
+
+line-height:40px;
+
+color:#fff;
+
+}
+
+
+
+
+/* =================================
+   BUTTON
+================================= */
+
+
+button{
+
+margin-top:35px;
+
+padding:15px 45px;
+
+border:none;
+
+border-radius:50px;
+
+background:
+
+linear-gradient(
+45deg,
+#ff1493,
+#ff69b4
+);
+
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:
+
+0 0 20px pink;
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.1);
+
+box-shadow:
+
+0 0 40px hotpink;
+
+}
+
+
+
+
+/* =================================
+   IMAGE GALLERY
+================================= */
+
+
+.gallery{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+
+.gallery img{
+
+width:220px;
+
+height:260px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:3px solid pink;
+
+transition:.5s;
+
+}
+
+
+.gallery img:hover{
+
+transform:
+
+scale(1.08)
+
+rotate(3deg);
+
+box-shadow:
+
+0 0 30px pink;
+
+}
+
+
+
+
+/* =================================
+   VIDEOS
+================================= */
+
+
+.videoBox{
+
+display:flex;
+
+gap:25px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+
+.videoBox video{
+
+width:350px;
+
+max-width:100%;
+
+border-radius:20px;
+
+border:3px solid #ff69b4;
+
+box-shadow:
+
+0 0 30px rgba(255,20,147,.5);
+
+}
+
+
+
+
+
+/* =================================
+   LETTER
+================================= */
+
+
+#letterText{
+
+background:
+
+rgba(255,255,255,.1);
+
+padding:30px;
+
+border-radius:25px;
+
+}
+
+
+
+/* =================================
+   GIFT BOX
+================================= */
+
+
+.giftBox{
+
+font-size:120px;
+
+cursor:pointer;
+
+margin:40px;
+
+animation:
+
+shake 2s infinite;
+
+}
+
+
+@keyframes shake{
+
+
+0%{
+
+transform:rotate(0);
+
+}
+
+
+25%{
+
+transform:rotate(10deg);
+
+}
+
+
+50%{
+
+transform:rotate(-10deg);
+
+}
+
+
+100%{
+
+transform:rotate(0);
+
+}
+
+
+}
+
+
+.giftBox.open{
+
+animation:none;
+
+transform:scale(1.5);
+
+}
+
+
+
+
+#giftMessage{
+
+font-size:28px;
+
+color:#ffd700;
+
+}
+
+
+
+
+
+/* =================================
+   CAKE
+================================= */
+
+
+.cake{
+
+font-size:150px;
+
+margin:40px;
+
+animation:
+
+bounce 2s infinite;
+
+}
+
+
+@keyframes bounce{
+
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+
+}
+
+
+
+
+
+/* =================================
+   FINAL SCREEN
+================================= */
+
+
+#final h1{
+
+font-size:65px;
+
+color:white;
+
+}
+
+
+#final p{
+
+font-size:26px;
+
+}
+
+
+
+
+/* =================================
+   FIREWORK CANVAS
+================================= */
+
+
+#fireworks{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+pointer-events:none;
+
+z-index:10;
+
+}
+
+
+
+
+/* =================================
+   MOBILE
+================================= */
+
+
+@media(max-width:768px){
+
+
+h1{
+
+font-size:35px;
+
+}
+
+
+h3{
+
+font-size:22px;
+
+}
+
+
+p{
+
+font-size:17px;
+
+line-height:30px;
+
+}
+
+
+.content{
+
+padding:25px;
+
+}
+
+
+.gallery img{
+
+width:130px;
+
+height:160px;
+
+}
+
+
+.giftBox{
+
+font-size:90px;
+
+}
+
+
+.cake{
+
+font-size:100px;
+
+}
+
+
+button{
+
+font-size:16px;
+
+padding:12px 30px;
+
+}
+
+
+
+}
