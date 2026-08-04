@@ -29,28 +29,74 @@ function nextScreen(id){
 
 
 
-// =================================
-// MUSIC START
-// =================================
+// ===============================
+// TWO SONG AUTO PLAY SYSTEM
+// ===============================
 
 const music = document.getElementById("music");
 
-let musicPlayed = false;
 
+const songs = [
+
+"music/AkkaSong.mp3",
+
+"music/song2.mp3"
+
+];
+
+
+let currentSong = 0;
+
+
+
+function playMusic(){
+
+
+    music.src = songs[currentSong];
+
+    music.play();
+
+
+}
+
+
+
+// First click start
 
 document.addEventListener("click",()=>{
 
 
-    if(!musicPlayed){
+    if(music.paused){
 
-        music.play();
-
-        musicPlayed=true;
+        playMusic();
 
     }
 
 
 },{once:true});
+
+
+
+
+// When one song ends, play next
+
+music.addEventListener("ended",()=>{
+
+
+    currentSong++;
+
+
+    if(currentSong >= songs.length){
+
+        currentSong = 0;
+
+    }
+
+
+    playMusic();
+
+
+});
 
 
 
