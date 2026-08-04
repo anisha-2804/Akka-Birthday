@@ -5,35 +5,21 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Akka ❤️</title>
+<title>Akka Birthday Surprise ❤️</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style1.css">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
+
 <body>
 
-<!-- Loading -->
 
-<div id="loader">
-
-<h1>Loading Surprise...</h1>
-
-</div>
-
-<!-- Background Music -->
-
-<!--
-YOUR SONG HERE
-
-music/song.mp3
-
--->
+<!-- MUSIC -->
 
 <audio id="music" loop>
 
@@ -41,39 +27,116 @@ music/song.mp3
 
 </audio>
 
-<!-- Floating Hearts -->
 
-<div id="hearts"></div>
 
-<!-- Hero -->
 
-<section class="hero">
+<!-- =====================
+INTRO SCREEN
+===================== -->
 
-<h3>🎉 Happy Birthday 🎉</h3>
+<section class="screen active" id="intro">
 
-<h1>AKKA ❤️</h1>
+<div class="content">
 
-<p id="typing"></p>
+<h3>
+✨ A Special Surprise ✨
+</h3>
 
-<button id="playMusic">
 
-Play Music 🎵
+<h1>
+For My Lovely Akka ❤️
+</h1>
+
+
+<p>
+I made something special just for you...
+</p>
+
+
+<button onclick="nextScreen('welcome')">
+
+Start Journey 💖
 
 </button>
 
+
+</div>
+
 </section>
 
-<!-- Gallery -->
 
-<section class="gallery">
 
-<h2>Beautiful Memories 📸</h2>
 
-<div class="slider">
+
+
+<!-- =====================
+WELCOME SCREEN
+===================== -->
+
+
+<section class="screen" id="welcome">
+
+<div class="content">
+
+
+<h1>
+Welcome Akka ❤️
+</h1>
+
+
+<p>
+
+Today is your special day.
+
+A small surprise filled with
+love, memories and happiness.
+
+</p>
+
+
+<button onclick="nextScreen('memories')">
+
+Next Surprise ✨
+
+</button>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =====================
+MEMORIES SCREEN
+===================== -->
+
+
+<section class="screen" id="memories">
+
+
+<div class="content">
+
+
+<h1>
+Our Beautiful Memories 📸
+</h1>
+
+
+<div class="gallery">
+
 
 <!--
+ADD YOUR PHOTOS HERE
 
-PUT YOUR IMAGES HERE
+images/1.jpg
+images/2.jpg
+images/3.jpg
 
 -->
 
@@ -85,73 +148,371 @@ PUT YOUR IMAGES HERE
 
 <img src="images/4.jpg">
 
-<img src="images/5.jpg">
 
 </div>
 
-</section>
 
-<!-- Videos -->
+<button onclick="nextScreen('reasons')">
 
-<section class="videos">
+Next Surprise 🌟
 
-<h2>Special Videos 🎥</h2>
+</button>
 
-<div class="videoBox">
-
-<!--
-
-PUT VIDEOS HERE
-
--->
-
-<video controls>
-
-<source src="videos/1.mp4">
-
-</video>
-
-<video controls>
-
-<source src="videos/2.mp4">
-
-</video>
 
 </div>
 
+
 </section>
 
-<!-- Letter -->
 
-<section class="letter">
 
-<h2>Dear Akka ❤️</h2>
+
+
+
+
+
+<!-- =====================
+SPECIAL REASONS SCREEN
+===================== -->
+
+
+<section class="screen" id="reasons">
+
+
+<div class="content">
+
+
+<h1>
+Why My Akka Is Special 🌟
+</h1>
+
+
+
+<div class="reasonBox">
+
+
+<div class="reasonCard">
+
+<h2>01 💖</h2>
+
+<h3>
+My Biggest Support
+</h3>
 
 <p>
+You always support me and stand by my side.
+You are my strongest person.
+</p>
 
-Every smile of yours is precious.
+</div>
 
-Thank you for being the best sister.
 
-You are my biggest support,
 
-my betterhalf,
 
-my happiness,
 
-my strength.
+<div class="reasonCard">
 
-Happy Birthday Akka❤️
+<h2>02 🌸</h2>
+
+<h3>
+You Are Always My Better Half
+</h3>
+
+<p>
+You complete my happiness and make every moment special.
+You are the person I can always count on.
+</p>
+
+</div>
+
+
+
+
+
+<div class="reasonCard">
+
+<h2>03 ⭐</h2>
+
+<h3>
+My Inspiration
+</h3>
+
+<p>
+You always motivate me to become a better person
+and encourage me to achieve my dreams.
+</p>
+
+</div>
+
+
+
+
+
+<div class="reasonCard">
+
+<h2>04 🦋</h2>
+
+<h3>
+My Happiness
+</h3>
+
+<p>
+Your smile brings happiness and positivity
+to everyone around you.
+</p>
+
+</div>
+
+
+
+
+
+<div class="reasonCard">
+
+<h2>05 ✨</h2>
+
+<h3>
+My Guide
+</h3>
+
+<p>
+You always show me the right path
+and guide me whenever I need you.
+</p>
+
+</div>
+
+
+
+
+
+<div class="reasonCard">
+
+<h2>06 🌹</h2>
+
+<h3>
+My Protector
+</h3>
+
+<p>
+You always care for me and protect me
+like no one else.
+</p>
+
+</div>
+
+
+
+
+
+<div class="reasonCard">
+
+<h2>07 💫</h2>
+
+<h3>
+My Motivation
+</h3>
+
+<p>
+You inspire me to improve myself
+and keep moving forward.
+</p>
+
+</div>
+
+
+
+
+
+<div class="reasonCard">
+
+<h2>08 ❤️</h2>
+
+<h3>
+My Forever Support
+</h3>
+
+<p>
+No matter what happens,
+you will always be there for me.
+</p>
+
+</div>
+
+
+
+
+
+<div class="reasonCard">
+
+<h2>09 🌈</h2>
+
+<h3>
+Family's Happiness
+</h3>
+
+<p>
+Your presence fills our home
+with love and happiness.
+</p>
+
+</div>
+
+
+
+
+
+<div class="reasonCard">
+
+<h2>10 👑</h2>
+
+<h3>
+The Best Akka
+</h3>
+
+<p>
+Having an Akka like you is the biggest blessing
+and I am always lucky to have you.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+
+<button onclick="nextScreen('letter')">
+
+Next Surprise 💌
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =====================
+LETTER SCREEN
+===================== -->
+
+
+<section class="screen" id="letter">
+
+
+<div class="content">
+
+
+<h1>
+Dear Akka ❤️
+</h1>
+
+
+<p id="letterText">
+
+Every smile of yours makes our family happier.
+
+Thank you for always caring,
+supporting and being the best sister.
+
+You are my forever special person.
+
+Happy Birthday Akka ❤️
 
 </p>
 
+
+
+<button onclick="nextScreen('gift')">
+
+Open Gift 🎁
+
+</button>
+
+
+</div>
+
+
 </section>
 
-<!-- Cake -->
 
-<section class="cakeSection">
 
-<h2>Make A Wish 🎂</h2>
+
+
+
+
+
+<!-- =====================
+GIFT SCREEN
+===================== -->
+
+
+<section class="screen" id="gift">
+
+
+<div class="content">
+
+
+<h1>
+A Small Gift For You 🎁
+</h1>
+
+
+<div class="giftBox" onclick="openGift()">
+
+🎁
+
+</div>
+
+
+<p id="giftMessage"></p>
+
+
+
+<button onclick="nextScreen('cake')">
+
+Next Surprise 🎂
+
+</button>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =====================
+CAKE SCREEN
+===================== -->
+
+
+<section class="screen" id="cake">
+
+
+<div class="content">
+
+
+<h1>
+Make A Wish 🎂
+</h1>
+
 
 <div class="cake">
 
@@ -159,19 +520,77 @@ Happy Birthday Akka❤️
 
 </div>
 
-<button id="cakeBtn">
 
-Cut Cake 🎉
+
+<button onclick="celebrate()">
+
+Cut The Cake 🎉
 
 </button>
 
+
+<button onclick="nextScreen('final')">
+
+Final Surprise ✨
+
+</button>
+
+
+
+</div>
+
+
 </section>
 
-<!-- Fireworks -->
+
+
+
+
+
+
+
+<!-- =====================
+FINAL SCREEN
+===================== -->
+
+
+<section class="screen" id="final">
+
+
+<div class="content">
+
+
+<h1>
+
+Happy Birthday My Lovely Akka ❤️
+
+</h1>
+
+
+<p>
+
+You are my biggest support,
+my happiness and my forever inspiration.
+<br>
+
+❤️ Love You Forever ❤️ Miss you lots❤️....
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
 
 <canvas id="fireworks"></canvas>
 
-<script src="script.js"></script>
+
+<script src="script1.js"></script>
+
 
 </body>
 

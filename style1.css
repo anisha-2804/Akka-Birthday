@@ -21,6 +21,7 @@ body{
 }
 
 
+
 /* =================================
    SCREEN SYSTEM
 ================================= */
@@ -50,11 +51,14 @@ body{
 
     visibility:hidden;
 
-    transform:scale(1.1);
+    transform:scale(1.08);
 
     transition:1s ease;
 
+    overflow-y:auto;
+
 }
+
 
 
 .screen.active{
@@ -69,8 +73,9 @@ body{
 
 
 
+
 /* =================================
-   BACKGROUND COLORS
+   BACKGROUNDS
 ================================= */
 
 
@@ -79,7 +84,7 @@ body{
 background:
 
 linear-gradient(
-rgba(0,0,0,.5),
+rgba(0,0,0,.55),
 rgba(0,0,0,.8)
 ),
 
@@ -92,11 +97,12 @@ background-position:center;
 }
 
 
+
 #welcome{
 
 background:
 
-radial-gradient(circle,#46124f,#050505);
+radial-gradient(circle,#50145c,#050505);
 
 }
 
@@ -106,17 +112,17 @@ radial-gradient(circle,#46124f,#050505);
 
 background:
 
-linear-gradient(135deg,#15001f,#050505);
+linear-gradient(135deg,#160020,#050505);
 
 }
 
 
 
-#videos{
+#reasons{
 
 background:
 
-linear-gradient(135deg,#001b2e,#050505);
+linear-gradient(135deg,#001b35,#050505);
 
 }
 
@@ -126,7 +132,7 @@ linear-gradient(135deg,#001b2e,#050505);
 
 background:
 
-linear-gradient(135deg,#31002d,#050505);
+linear-gradient(135deg,#35002f,#050505);
 
 }
 
@@ -136,7 +142,7 @@ linear-gradient(135deg,#31002d,#050505);
 
 background:
 
-linear-gradient(135deg,#3b2100,#050505);
+linear-gradient(135deg,#402500,#050505);
 
 }
 
@@ -146,7 +152,7 @@ linear-gradient(135deg,#3b2100,#050505);
 
 background:
 
-linear-gradient(135deg,#320016,#050505);
+linear-gradient(135deg,#40001c,#050505);
 
 }
 
@@ -165,7 +171,7 @@ radial-gradient(circle,#ff1493,#050505);
 
 
 /* =================================
-   CONTENT CARD
+   MAIN CONTENT
 ================================= */
 
 
@@ -173,9 +179,9 @@ radial-gradient(circle,#ff1493,#050505);
 
 width:90%;
 
-max-width:1000px;
+max-width:1100px;
 
-padding:40px;
+padding:35px;
 
 background:
 
@@ -193,44 +199,13 @@ box-shadow:
 
 0 0 40px rgba(255,105,180,.25);
 
-animation:float 4s infinite;
-
 }
 
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-
-
-
-/* =================================
-   TEXT
-================================= */
 
 
 h1{
 
-font-size:55px;
+font-size:50px;
 
 color:#ffb6e6;
 
@@ -243,26 +218,23 @@ margin-bottom:25px;
 }
 
 
-h3{
 
-font-size:30px;
+h3{
 
 color:#ffd700;
 
-margin-bottom:20px;
-
 }
+
 
 
 p{
 
-font-size:22px;
+font-size:20px;
 
-line-height:40px;
-
-color:#fff;
+line-height:35px;
 
 }
+
 
 
 
@@ -274,7 +246,7 @@ color:#fff;
 
 button{
 
-margin-top:35px;
+margin-top:30px;
 
 padding:15px 45px;
 
@@ -284,24 +256,15 @@ border-radius:50px;
 
 background:
 
-linear-gradient(
-45deg,
-#ff1493,
-#ff69b4
-);
-
+linear-gradient(45deg,#ff1493,#ff69b4);
 
 color:white;
 
-font-size:20px;
+font-size:18px;
 
 cursor:pointer;
 
 transition:.4s;
-
-box-shadow:
-
-0 0 20px pink;
 
 }
 
@@ -311,11 +274,10 @@ button:hover{
 
 transform:scale(1.1);
 
-box-shadow:
-
-0 0 40px hotpink;
+box-shadow:0 0 30px hotpink;
 
 }
+
 
 
 
@@ -338,11 +300,12 @@ flex-wrap:wrap;
 }
 
 
+
 .gallery img{
 
-width:220px;
+width:200px;
 
-height:260px;
+height:250px;
 
 object-fit:cover;
 
@@ -355,54 +318,156 @@ transition:.5s;
 }
 
 
+
 .gallery img:hover{
 
-transform:
+transform:scale(1.1) rotate(3deg);
 
-scale(1.08)
-
-rotate(3deg);
-
-box-shadow:
-
-0 0 30px pink;
+box-shadow:0 0 30px pink;
 
 }
+
 
 
 
 
 /* =================================
-   VIDEOS
+   SPECIAL REASONS SECTION
 ================================= */
 
 
-.videoBox{
+.reasonBox{
 
-display:flex;
+display:grid;
 
-gap:25px;
+grid-template-columns:
 
-justify-content:center;
+repeat(2,1fr);
 
-flex-wrap:wrap;
+gap:20px;
+
+max-height:55vh;
+
+overflow-y:auto;
+
+padding:10px;
 
 }
 
 
-.videoBox video{
 
-width:350px;
+.reasonCard{
 
-max-width:100%;
 
-border-radius:20px;
+background:
 
-border:3px solid #ff69b4;
+rgba(255,255,255,.1);
+
+
+border-radius:25px;
+
+
+padding:25px;
+
+
+border:
+
+1px solid rgba(255,255,255,.25);
+
+
+backdrop-filter:blur(12px);
+
+
+transition:.5s;
+
+
+cursor:pointer;
+
+
+animation:
+
+cardShow .8s ease;
+
+
+}
+
+
+
+
+.reasonCard:hover{
+
+
+transform:
+
+translateY(-10px)
+
+scale(1.03);
+
+
+background:
+
+rgba(255,105,180,.2);
+
 
 box-shadow:
 
-0 0 30px rgba(255,20,147,.5);
+0 0 30px pink;
+
+
+}
+
+
+
+.reasonCard h2{
+
+font-size:35px;
+
+color:#ffd700;
+
+}
+
+
+
+.reasonCard h3{
+
+font-size:24px;
+
+margin:10px;
+
+}
+
+
+
+.reasonCard p{
+
+font-size:16px;
+
+line-height:28px;
+
+}
+
+
+
+@keyframes cardShow{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
 
 }
 
@@ -429,8 +494,10 @@ border-radius:25px;
 
 
 
+
+
 /* =================================
-   GIFT BOX
+   GIFT
 ================================= */
 
 
@@ -438,9 +505,9 @@ border-radius:25px;
 
 font-size:120px;
 
-cursor:pointer;
+margin:30px;
 
-margin:40px;
+cursor:pointer;
 
 animation:
 
@@ -449,10 +516,21 @@ shake 2s infinite;
 }
 
 
+
+.giftBox.open{
+
+transform:scale(1.5);
+
+animation:none;
+
+}
+
+
+
 @keyframes shake{
 
 
-0%{
+0%,100%{
 
 transform:rotate(0);
 
@@ -466,42 +544,14 @@ transform:rotate(10deg);
 }
 
 
-50%{
+75%{
 
 transform:rotate(-10deg);
 
 }
 
 
-100%{
-
-transform:rotate(0);
-
 }
-
-
-}
-
-
-.giftBox.open{
-
-animation:none;
-
-transform:scale(1.5);
-
-}
-
-
-
-
-#giftMessage{
-
-font-size:28px;
-
-color:#ffd700;
-
-}
-
 
 
 
@@ -513,15 +563,14 @@ color:#ffd700;
 
 .cake{
 
-font-size:150px;
+font-size:140px;
 
-margin:40px;
+margin:30px;
 
-animation:
-
-bounce 2s infinite;
+animation:bounce 2s infinite;
 
 }
+
 
 
 @keyframes bounce{
@@ -541,30 +590,32 @@ transform:translateY(-20px);
 
 
 /* =================================
-   FINAL SCREEN
+   FINAL
 ================================= */
 
 
 #final h1{
 
-font-size:65px;
+font-size:60px;
 
 color:white;
 
 }
 
 
+
 #final p{
 
-font-size:26px;
+font-size:25px;
 
 }
 
 
 
 
+
 /* =================================
-   FIREWORK CANVAS
+   FIREWORKS
 ================================= */
 
 
@@ -578,42 +629,20 @@ left:0;
 
 pointer-events:none;
 
-z-index:10;
+z-index:20;
 
 }
+
 
 
 
 
 /* =================================
-   MOBILE
+   MOBILE DESIGN
 ================================= */
 
 
 @media(max-width:768px){
-
-
-h1{
-
-font-size:35px;
-
-}
-
-
-h3{
-
-font-size:22px;
-
-}
-
-
-p{
-
-font-size:17px;
-
-line-height:30px;
-
-}
 
 
 .content{
@@ -623,13 +652,67 @@ padding:25px;
 }
 
 
-.gallery img{
+h1{
 
-width:130px;
-
-height:160px;
+font-size:34px;
 
 }
+
+
+
+p{
+
+font-size:16px;
+
+line-height:28px;
+
+}
+
+
+
+.gallery img{
+
+width:120px;
+
+height:150px;
+
+}
+
+
+
+
+.reasonBox{
+
+grid-template-columns:1fr;
+
+max-height:50vh;
+
+}
+
+
+
+.reasonCard{
+
+padding:18px;
+
+}
+
+
+
+.reasonCard h2{
+
+font-size:28px;
+
+}
+
+
+
+.reasonCard h3{
+
+font-size:20px;
+
+}
+
 
 
 .giftBox{
@@ -639,6 +722,7 @@ font-size:90px;
 }
 
 
+
 .cake{
 
 font-size:100px;
@@ -646,9 +730,10 @@ font-size:100px;
 }
 
 
+
 button{
 
-font-size:16px;
+font-size:15px;
 
 padding:12px 30px;
 

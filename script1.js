@@ -1,5 +1,5 @@
 // =================================
-// SCREEN CHANGE SYSTEM
+// SCREEN CHANGE
 // =================================
 
 function nextScreen(id){
@@ -20,42 +20,37 @@ function nextScreen(id){
 
         next.classList.add("active");
 
-    },300);
+        createHearts();
 
+    },400);
 
-    createHearts();
 
 }
 
 
 
-
-
 // =================================
-// MUSIC SYSTEM
+// MUSIC START
 // =================================
 
 const music = document.getElementById("music");
 
-
-let musicStarted = false;
-
+let musicPlayed = false;
 
 
 document.addEventListener("click",()=>{
 
 
-    if(!musicStarted){
+    if(!musicPlayed){
 
         music.play();
 
-        musicStarted=true;
+        musicPlayed=true;
 
     }
 
 
 },{once:true});
-
 
 
 
@@ -68,7 +63,7 @@ document.addEventListener("click",()=>{
 function createHearts(){
 
 
-for(let i=0;i<15;i++){
+for(let i=0;i<20;i++){
 
 
 let heart=document.createElement("div");
@@ -79,26 +74,23 @@ heart.innerHTML="❤️";
 
 heart.style.position="fixed";
 
-
-heart.style.bottom="-20px";
-
-
 heart.style.left=Math.random()*100+"vw";
+
+heart.style.bottom="-30px";
 
 
 heart.style.fontSize=
 
-(20+Math.random()*30)+"px";
+(20+Math.random()*35)+"px";
 
+
+heart.style.zIndex="30";
 
 
 heart.style.animation=
 
-"heartMove 5s linear forwards";
+"heartFloat 5s linear forwards";
 
-
-
-heart.style.zIndex="20";
 
 
 document.body.appendChild(heart);
@@ -112,7 +104,6 @@ heart.remove();
 },5000);
 
 
-
 }
 
 
@@ -121,14 +112,13 @@ heart.remove();
 
 
 
-// Heart Animation CSS add dynamically
-
-const heartStyle=document.createElement("style");
+const heartCSS=document.createElement("style");
 
 
-heartStyle.innerHTML=`
+heartCSS.innerHTML=`
 
-@keyframes heartMove{
+@keyframes heartFloat{
+
 
 0%{
 
@@ -152,8 +142,7 @@ opacity:0;
 
 `;
 
-
-document.head.appendChild(heartStyle);
+document.head.appendChild(heartCSS);
 
 
 
@@ -176,15 +165,22 @@ gift.classList.add("open");
 
 document.getElementById("giftMessage").innerHTML=
 
-"✨ You are the most special person in my life Akka ❤️";
+`
+✨ Surprise! ✨
+
+You are not just my Akka...
+
+You are always my betterhalf and forever support ❤️
+`;
 
 
 
 confetti();
 
 
-
 }
+
+
 
 
 
@@ -198,7 +194,6 @@ function celebrate(){
 
 
 const cake=document.querySelector(".cake");
-
 
 
 cake.innerHTML="🎂✨";
@@ -224,8 +219,8 @@ cake.style.transform="scale(1)";
 },1000);
 
 
-
 }
+
 
 
 
@@ -239,63 +234,52 @@ cake.style.transform="scale(1)";
 function confetti(){
 
 
-
-for(let i=0;i<120;i++){
-
-
-
-let piece=document.createElement("div");
+for(let i=0;i<150;i++){
 
 
 
-piece.style.position="fixed";
-
-
-piece.style.top="-20px";
-
-
-piece.style.left=
-
-Math.random()*100+"vw";
+let box=document.createElement("div");
 
 
 
-piece.style.width="10px";
+box.style.position="fixed";
 
 
-piece.style.height="18px";
+box.style.top="-20px";
+
+
+box.style.left=Math.random()*100+"vw";
+
+
+box.style.width="10px";
+
+
+box.style.height="18px";
 
 
 
-piece.style.background=
+box.style.background=
 
 `hsl(${Math.random()*360},100%,50%)`;
 
 
 
-piece.style.zIndex="9999";
+box.style.zIndex="9999";
+
+
+box.style.animation=
+
+"confettiFall 3s linear forwards";
 
 
 
-piece.style.transform=
-
-`rotate(${Math.random()*360}deg)`;
-
-
-
-piece.style.animation=
-
-"fall 3s linear forwards";
-
-
-
-document.body.appendChild(piece);
+document.body.appendChild(box);
 
 
 
 setTimeout(()=>{
 
-piece.remove();
+box.remove();
 
 },3000);
 
@@ -304,27 +288,26 @@ piece.remove();
 }
 
 
-
 }
 
 
 
-const confettiStyle=document.createElement("style");
+const confettiCSS=document.createElement("style");
 
 
-confettiStyle.innerHTML=`
+confettiCSS.innerHTML=`
 
-@keyframes fall{
+@keyframes confettiFall{
 
 
-0%{
+from{
 
 transform:translateY(0) rotate(0);
 
 }
 
 
-100%{
+to{
 
 transform:translateY(100vh) rotate(720deg);
 
@@ -335,36 +318,27 @@ transform:translateY(100vh) rotate(720deg);
 
 `;
 
-document.head.appendChild(confettiStyle);
+document.head.appendChild(confettiCSS);
 
 
 
 
 
 // =================================
-// FIREWORK SYSTEM
+// FIREWORKS
 // =================================
 
 
-const canvas=
-
-document.getElementById("fireworks");
+const canvas=document.getElementById("fireworks");
 
 
-const ctx=
-
-canvas.getContext("2d");
+const ctx=canvas.getContext("2d");
 
 
 
-canvas.width=
+canvas.width=window.innerWidth;
 
-window.innerWidth;
-
-
-canvas.height=
-
-window.innerHeight;
+canvas.height=window.innerHeight;
 
 
 
@@ -378,6 +352,7 @@ canvas.height=window.innerHeight;
 
 
 });
+
 
 
 
@@ -411,7 +386,7 @@ this.speedY=
 (Math.random()-0.5)*8;
 
 
-this.life=80;
+this.life=90;
 
 
 }
@@ -455,25 +430,22 @@ Math.PI*2
 );
 
 
-
 ctx.fillStyle=this.color;
 
 
 ctx.fill();
 
 
-
 }
 
 
-
 }
+
 
 
 
 
 function fireworkBurst(){
-
 
 
 let x=Math.random()*canvas.width;
@@ -483,7 +455,7 @@ let y=Math.random()*canvas.height/2;
 
 
 
-for(let i=0;i<80;i++){
+for(let i=0;i<100;i++){
 
 
 particles.push(
@@ -504,12 +476,13 @@ y,
 }
 
 
-
 }
 
 
 
-function animateFireworks(){
+
+
+function animate(){
 
 
 ctx.clearRect(
@@ -543,19 +516,19 @@ particles.splice(index,1);
 }
 
 
-
 });
 
 
 
-requestAnimationFrame(animateFireworks);
+requestAnimationFrame(animate);
 
 
 }
 
 
 
-animateFireworks();
+animate();
+
 
 
 
@@ -566,21 +539,61 @@ setInterval(()=>{
 fireworkBurst();
 
 
-},2500);
+},3000);
+
 
 
 
 
 
 // =================================
-// AUTO HEART EFFECT
+// FINAL SCREEN EFFECT
 // =================================
 
 
-setInterval(()=>{
+const finalScreen=document.getElementById("final");
+
+
+const observer=new MutationObserver(()=>{
+
+
+if(finalScreen.classList.contains("active")){
+
+
+confetti();
+
+
+fireworkBurst();
 
 
 createHearts();
 
 
-},4000);
+}
+
+
+});
+
+
+observer.observe(finalScreen,{
+
+attributes:true,
+
+attributeFilter:["class"]
+
+});
+
+
+
+
+
+// =================================
+// AUTO HEARTS
+// =================================
+
+
+setInterval(()=>{
+
+createHearts();
+
+},5000);
